@@ -1,21 +1,18 @@
-﻿namespace StudentPortal.Web.Models.Entities
+﻿namespace StudentPortal.Web.Models
 {
-    public class StudentFile
+    public class AddStudentViewModel
     {
-        
-        public long STFSTUDID { get; set; }
-        
         public string STFSTUDLNAME { get; set; }
 
         public string STFSTUDFNAME { get; set; }
 
         public string STFSTUDMNAME { get; set; }
-        
-        public string STFSTUDCOURSE { get;set; }
 
-        public int STFSTUDYEAR { get;set; }
+        public string STFSTUDCOURSE { get; set; }
 
-        public string STFSTUDREMARKS{ get; set; }
+        public int STFSTUDYEAR { get; set; }
+
+        public string STFSTUDREMARKS { get; set; }
 
         public STFSTUDSTATUSEnum STFSTUDSTATUS { get; set; }
     }
@@ -25,6 +22,5 @@
         A,  // Active
         IN  // Inactive
     }
-
-
+}
 }

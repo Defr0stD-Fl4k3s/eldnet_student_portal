@@ -6,30 +6,56 @@
 <h1>Add Students</h1>
 
 <div class="mt-3">
-    <label class="form-label">First Name</label>
-    <input type="text" class="form-control"/>
+    <label class="form-label">Last Name</label>
+    <input type="text" class="form-control" maxlength="15" name="STFSTUDLNAME" />
 </div>
 
 
 <div class="mt-3">
-    <label class="form-label">Last Name</label>
-    <input type="text" class="form-control" />
+    <label class="form-label">First Name</label>
+    <input type="text" class="form-control" maxlength="15" name="STFSTUDFNAME" />
 </div>
 
 
 <div class="mt-3">
     <label class="form-label">Middle Name</label>
-    <input type="text" class="form-control" />
+    <input type="text" class="form-control" maxlength="15" name="STFSTUDMNAME" />
 </div>
 
 
 <div class="mt-3">
     <label class="form-label">Course</label>
-    <input type="text" class="form-control" />
+    <input type="text" class="form-control" maxlength="10" name="STFSTUDCOURSE" />
 </div>
 
 
 <div class="mt-3">
     <label class="form-label">Year</label>
-    <input type="text" class="form-control" />
+    <input type="text" class="form-control" name="STFSTUDYEAR" min="1" max="10" />
+</div>
+
+<div class="mt-3">
+    <label class="form-label">Remarks</label>
+    <select class="form-control" name="STFSTUDREMARKS">
+        <option value="">Select Remarks</option>
+        <option value="Shiftee">Shiftee</option>
+        <option value="Transferee">Transferee</option>
+        <option value="New">New</option>
+        <option value="Old">Old</option>
+        <option value="Cross-Enrollee">Cross-Enrollee</option>
+        <option value="Returnee">Returnee</option>
+    </select>
+</div>
+
+<div class="mt-3">
+    <label class="form-label">Status</label>
+    <select class="form-control" name="STFSTUDSTATUS">
+        <option value="">Select Status</option>
+        <option value="A">Active</option>
+        <option value="IN">Inactive</option>
+    </select>
+</div>
+
+<div class="mt-3">
+    <button type="submit" class="btn btn-primary">Submit</button>
 </div>
