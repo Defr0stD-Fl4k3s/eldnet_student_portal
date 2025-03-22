@@ -16,11 +16,11 @@
 
         public STFSTUDSTATUSEnum STFSTUDSTATUS { get; set; }
     }
-
+    
     public enum STFSTUDSTATUSEnum
     {
         A,  // Active
         IN  // Inactive
     }
 }
-}
+

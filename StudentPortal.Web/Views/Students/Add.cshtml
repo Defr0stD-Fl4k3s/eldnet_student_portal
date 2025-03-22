@@ -3,40 +3,43 @@
 *@
 @{
 }
+@model StudentPortal.Web.Models.AddStudentViewModel
 <h1>Add Students</h1>
+
+<form method="post">
 
 <div class="mt-3">
     <label class="form-label">Last Name</label>
-    <input type="text" class="form-control" maxlength="15" name="STFSTUDLNAME" />
+    <input type="text" class="form-control" maxlength="15" name="STFSTUDLNAME" asp-for="STFSTUDLNAME" />
 </div>
 
 
 <div class="mt-3">
     <label class="form-label">First Name</label>
-    <input type="text" class="form-control" maxlength="15" name="STFSTUDFNAME" />
+    <input type="text" class="form-control" maxlength="15" name="STFSTUDFNAME" asp-for=STFSTUDFNAME />
 </div>
 
 
 <div class="mt-3">
     <label class="form-label">Middle Name</label>
-    <input type="text" class="form-control" maxlength="15" name="STFSTUDMNAME" />
+    <input type="text" class="form-control" maxlength="15" name="STFSTUDMNAME" asp-for=STFSTUDMNAME/>
 </div>
 
 
 <div class="mt-3">
     <label class="form-label">Course</label>
-    <input type="text" class="form-control" maxlength="10" name="STFSTUDCOURSE" />
+    <input type="text" class="form-control" maxlength="10" name="STFSTUDCOURSE" asp-for=STFSTUDCOURSE/>
 </div>
 
 
 <div class="mt-3">
     <label class="form-label">Year</label>
-    <input type="text" class="form-control" name="STFSTUDYEAR" min="1" max="10" />
+    <input type="text" class="form-control" name="STFSTUDYEAR" min="1" max="10" asp-for=STFSTUDYEAR />
 </div>
 
 <div class="mt-3">
     <label class="form-label">Remarks</label>
-    <select class="form-control" name="STFSTUDREMARKS">
+    <select class="form-control" name="STFSTUDREMARKS" asp-for=STFSTUDREMARKS>
         <option value="">Select Remarks</option>
         <option value="Shiftee">Shiftee</option>
         <option value="Transferee">Transferee</option>
@@ -49,7 +52,7 @@
 
 <div class="mt-3">
     <label class="form-label">Status</label>
-    <select class="form-control" name="STFSTUDSTATUS">
+    <select class="form-control" name="STFSTUDSTATUS" asp-for=STFSTUDSTATUS>
         <option value="">Select Status</option>
         <option value="A">Active</option>
         <option value="IN">Inactive</option>
@@ -59,3 +62,5 @@
 <div class="mt-3">
     <button type="submit" class="btn btn-primary">Submit</button>
 </div>
+
+</form>
