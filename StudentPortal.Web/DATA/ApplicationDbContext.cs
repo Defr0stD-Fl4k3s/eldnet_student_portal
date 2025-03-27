@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using StudentPortal.Web.Models.Entities;
 
 namespace StudentPortal.Web.DATA
 {
@@ -8,5 +9,7 @@ namespace StudentPortal.Web.DATA
         {
             
         }
+
+        public DbSet<StudentFile> StudentFiles { get; set; }
     }
 }

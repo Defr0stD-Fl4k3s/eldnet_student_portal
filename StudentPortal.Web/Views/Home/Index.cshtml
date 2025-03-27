@@ -1,8 +1,52 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Building a bright future for your kids, <a href="https://localhost:7077/Students/Add">Click here to enroll now</a>.</p>
-</div>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Student Portal</title>
+    <!-- Link to your CSS file. Make sure the path matches your project structure -->
+    <link rel="stylesheet" href="~/css/homestyle.css" asp-append-version="true" />
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <h2>Student Portal</h2>
+        <ul>
+            <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+            <li><a href="@Url.Action("Students", "Home")">Students</a></li>
+            <li><a href="@Url.Action("Subjects", "Home")">Subjects</a></li>
+            <li><a href="@Url.Action("Enrollment", "Home")">Enrollment</a></li>
+            <li><a href="@Url.Action("Grades", "Home")">Grades</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+        <h1>Welcome to Student Portal</h1>
+        <p>Select an option from the sidebar to get started.</p>
+
+        <!-- Quick Action Cards -->
+        <div class="card-container">
+            <div class="card">
+                <h3>Add Student</h3>
+                <p>Register new students in the system.</p>
+                <a href="https://localhost:7077/Students/Add">Add Student</a>
+            </div>
+            <div class="card">
+                <h3>Add Subject</h3>
+                <p>Manage subject listings and offerings.</p>
+                <a href="@Url.Action("AddSubject", "Home")">Add Subject</a>
+            </div>
+            <div class="card">
+                <h3>View Enrollments</h3>
+                <p>Check enrolled students and details.</p>
+                <a href="@Url.Action("Enrollments", "Home")">View Enrollment</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
