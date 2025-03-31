@@ -12,11 +12,11 @@
 
         public string SFSUBJCATEGORY { get; set; }
 
-        public int SFSUBJSTATUS { get; set; }
+        public SFSUBJSTATUSEnum SFSUBJSTATUS { get; set; }
 
         public string SFSUBJCOURSECODE { get; set; }
 
-        public SFSUBJSTATUSEnum SFSUBJCURRCODE { get; set; }
+        public string  SFSUBJCURRCODE { get; set; }
 
     }
 
