@@ -1,22 +1,31 @@
-﻿namespace StudentPortal.Web.Models.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+
+namespace StudentPortal.Web.Models.Entities
 {
     public class SubjectFile
     {
-        public string SFSUBJCODE { get; set; }
+        [Key]
+        public string SFSUBJCODE { get; set; } // Primary Key (Part 1)
 
+        [Key]
+        public string SFSUBJCOURSECODE { get; set; } // Primary Key (Part 2)
+
+        [StringLength(40)]
         public string SFSUBJDESC { get; set; }
 
         public float SFSUBJUNITS { get; set; }
 
         public int SFSUBJREGOFRNG { get; set; }
 
-        public string SFSUBJCATEGORY { get; set; }
+        [StringLength(3)]
+        public string SFSUBJCATEGORY { get; set; } // "lec" or "lab"
 
-        public SFSUBJSTATUSEnum SFSUBJSTATUS { get; set; }
+        [StringLength(2)]
+        public string SFSUBJSTATUS { get; set; } // "AC" or "IN"
 
-        public string SFSUBJCOURSECODE { get; set; }
-
-        public string  SFSUBJCURRCODE { get; set; }
+        [StringLength(10)]
+        public string SFSUBJCURRCODE { get; set; } // Curriculum Code (AY2017)
 
     }
 

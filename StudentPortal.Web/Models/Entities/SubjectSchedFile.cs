@@ -4,6 +4,7 @@ namespace StudentPortal.Web.Models.Entities
 {
     public class SubjectSchedFile
     {
+        [Key]
         [StringLength(8)]
         public string SSFEDPCODE { get; set; }
         [StringLength(15)]

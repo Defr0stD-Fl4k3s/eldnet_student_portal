@@ -1,8 +1,10 @@
-﻿namespace StudentPortal.Web.Models.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace StudentPortal.Web.Models.Entities
 {
     public class StudentFile
     {
-        
+        [Key]
         public long STFSTUDID { get; set; }
         
         public string STFSTUDLNAME { get; set; }

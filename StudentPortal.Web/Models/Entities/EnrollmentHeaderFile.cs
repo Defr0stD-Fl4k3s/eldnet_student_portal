@@ -1,11 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
 namespace StudentPortal.Web.Models.Entities
 {
     public class EnrollmentHeaderFile
     {
+        [Key]
         public long ENRHFSTUDID { get; set; }
-
         public DateTime ENRHFSTUDDATEENROLL { get; set; } 
 
         [StringLength(15)]
