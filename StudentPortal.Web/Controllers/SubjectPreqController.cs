@@ -2,14 +2,12 @@
 
 namespace StudentPortal.Web.Controllers
 {
-    public class SubjectsController : Controller
+    public class SubjectPreqController : Controller
     {
         [HttpGet]
-        public IActionResult AddSubjects()
+        public IActionResult AddSubjectPreq()
         {
             return View();
         }
-
-
     }
 }

@@ -1,10 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
 namespace StudentPortal.Web.Models.Entities
 {
+    [PrimaryKey(nameof(SGFSTUDID), nameof(SGFSTUDEDPCODE))]
+
     public class StudentGradeFile
     {
-        [Key]
         public long SGFSTUDID {  get; set; }
 
         public string SGFSTUDSUBJCODE { get; set; }
