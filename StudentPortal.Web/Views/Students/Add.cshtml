@@ -8,34 +8,34 @@
 
 <form method="post">
 
-    <div class="mt-3">
-        <label class="form-label">Last Name</label>
-        <input type="text" class="form-control" maxlength="15" name="STFSTUDLNAME" asp-for="STFSTUDLNAME" />
-    </div>
+<div class="mt-3">
+    <label class="form-label">Last Name</label>
+    <input type="text" class="form-control" maxlength="15" name="LastName" asp-for="STFSTUDLNAME" />
+</div>
 
 
-    <div class="mt-3">
-        <label class="form-label">First Name</label>
-        <input type="text" class="form-control" maxlength="15" name="STFSTUDFNAME" asp-for=STFSTUDFNAME />
-    </div>
+<div class="mt-3">
+    <label class="form-label">First Name</label>
+    <input type="text" class="form-control" maxlength="15" name="FirstName" asp-for=STFSTUDFNAME />
+</div>
 
 
-    <div class="mt-3">
-        <label class="form-label">Middle Name</label>
-        <input type="text" class="form-control" maxlength="15" name="STFSTUDMNAME" asp-for=STFSTUDMNAME/>
-    </div>
+<div class="mt-3">
+    <label class="form-label">Middle Name</label>
+    <input type="text" class="form-control" maxlength="15" name="MiddleName" asp-for=STFSTUDMNAME/>
+</div>
 
 
-    <div class="mt-3">
-        <label class="form-label">Course</label>
-        <input type="text" class="form-control" maxlength="10" name="STFSTUDCOURSE" asp-for=STFSTUDCOURSE/>
-    </div>
+<div class="mt-3">
+    <label class="form-label">Course</label>
+    <input type="text" class="form-control" maxlength="10" name="StudentCourse" asp-for=STFSTUDCOURSE/>
+</div>
 
 
-    <div class="mt-3">
-        <label class="form-label">Year</label>
-        <input type="text" class="form-control" name="STFSTUDYEAR" min="1" max="10" asp-for=STFSTUDYEAR />
-    </div>
+<div class="mt-3">
+    <label class="form-label">Year</label>
+    <input type="text" class="form-control" name="StudentYear" min="1" max="10" asp-for=STFSTUDYEAR />
+</div>
 
     <div class="mt-3">
         <label class="form-label">Remarks</label>
@@ -62,5 +62,9 @@
     <div class="mt-3">
         <button type="submit" class="btn btn-primary">Submit</button>
     </div>
+
+  <div class="mt-3">
+        <button type="button" class="btn btn-primary">Back</button>
+  </div>
 
 </form>

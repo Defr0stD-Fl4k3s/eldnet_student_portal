@@ -16,11 +16,11 @@
     <aside class="sidebar">
         <h2>Student Portal</h2>
         <ul>
-            <li><a href="@Url.Action("Index", "Home")">Home</a></li>
-            <li><a href="@Url.Action("Students", "Home")">Students</a></li>
-            <li><a href="@Url.Action("Subjects", "Home")">Subjects</a></li>
-            <li><a href="@Url.Action("Enrollment", "Home")">Enrollment</a></li>
-            <li><a href="@Url.Action("Grades", "Home")">Grades</a></li>
+            <li><a href="@Url.Action("Index", "Home")">Home View</a></li>
+            <li><a href="@Url.Action("Students", "Home")">Students View</a></li>
+            <li><a href="@Url.Action("Subjects", "Home")">Subjects View</a></li>
+            <li><a href="@Url.Action("Enrollment", "Home")">Enrollment View/a></li>
+            <li><a href="@Url.Action("Grades", "Home")">Grades View</a></li>
         </ul>
     </aside>
 
@@ -34,17 +34,29 @@
             <div class="card">
                 <h3>Add Student</h3>
                 <p>Register new students in the system.</p>
-                <a href="https://localhost:7077/Students/Add">Add Student</a>
+                <a href="@Url.Action("Add", "Students")">Add Student</a>
             </div>
             <div class="card">
                 <h3>Add Subject</h3>
                 <p>Manage subject listings and offerings.</p>
-                <a href="@Url.Action("AddSubject", "Home")">Add Subject</a>
+                <a href="@Url.Action("AddSubjects", "Subjects")">Add Subject</a>
             </div>
             <div class="card">
-                <h3>View Enrollments</h3>
-                <p>Check enrolled students and details.</p>
-                <a href="@Url.Action("Enrollments", "Home")">View Enrollment</a>
+                <h3>Add Pre Requisite</h3>
+                <p>Add pre-requisite subjects.</p>
+                <a href="@Url.Action("AddSubjectPreq", "SubjectPreq")">Add Pre Requisite</a>
+            </div>
+
+            <div class="card">
+                <h3>Add Subject Schedule</h3>
+                <p>Add subject schedules for students.</p>
+                <a href="@Url.Action("AddSubjectSched", "SubjectSched")">Add Subject Schedule</a>
+            </div>
+
+            <div class="card">
+                <h3>Add Enrollment Header</h3>
+                <p>Add Enrollment header for students.</p>
+                <a href="@Url.Action("AddSubjectSched", "SubjectSched")">Add Enrollment Header</a>
             </div>
         </div>
     </main>
