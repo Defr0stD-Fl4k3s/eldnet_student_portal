@@ -104,3 +104,28 @@ p {
         .card a:hover {
             color: #16A085;
         }
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    width: 100%;
+    /* Rest of your existing card styles */
+}
+
+/* Optional: Responsive adjustment */
+@@media (max-width: 1200px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+}

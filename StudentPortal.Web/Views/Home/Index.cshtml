@@ -34,12 +34,12 @@
             <div class="card">
                 <h3>Add Student</h3>
                 <p>Register new students in the system.</p>
-                <a href="https://localhost:7077/Students/Add">Add Student</a>
+                <a href="@Url.Action("Add", "Students")">Add Student</a>
             </div>
             <div class="card">
                 <h3>Add Subject</h3>
                 <p>Manage subject listings and offerings.</p>
-                <a href="https://localhost:7077/Subjects/AddSubjects">Add Subject</a>
+                <a href="@Url.Action("AddSubjects", "Subjects")">Add Subject</a>
             </div>
             <div class="card">
                 <h3>Add Pre Requisite</h3>
@@ -50,9 +50,14 @@
             <div class="card">
                 <h3>Add Subject Schedule</h3>
                 <p>Add subject schedules for students.</p>
-                <a href="@Url.Action("Enrollments", "Home")">Add Subject Schedule</a>
+                <a href="@Url.Action("AddSubjectSched", "SubjectSched")">Add Subject Schedule</a>
             </div>
-                    
+
+            <div class="card">
+                <h3>Add Enrollment Header</h3>
+                <p>Add Enrollment header for students.</p>
+                <a href="@Url.Action("AddSubjectSched", "SubjectSched")">Add Enrollment Header</a>
+            </div>
         </div>
     </main>
 </body>
