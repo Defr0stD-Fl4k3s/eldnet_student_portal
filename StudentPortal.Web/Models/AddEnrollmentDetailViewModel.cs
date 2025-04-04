@@ -1,12 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace StudentPortal.Web.Models.Entities
+namespace StudentPortal.Web.Models
 {
     [PrimaryKey(nameof(ENRDFSTUDID), nameof(ENRDFSTUDEDPCODE))]
 
-    public class EnrollmentDetailFile
+    public class AddEnrollmentDetailViewModel
     {
         public long ENRDFSTUDID { get; set; } // Student ID
 
@@ -19,5 +18,4 @@ namespace StudentPortal.Web.Models.Entities
         [RegularExpression("WD|CA", ErrorMessage = "Must be 'WD' (Withdrawn) or 'CA' (Cancelled).")]
         public string ENRDFSTUDSTATUS { get; set; }
     }
-
 }
