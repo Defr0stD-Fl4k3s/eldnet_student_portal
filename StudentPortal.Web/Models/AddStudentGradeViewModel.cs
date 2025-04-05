@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 
-namespace StudentPortal.Web.Models.Entities
+namespace StudentPortal.Web.Models
 {
     [PrimaryKey(nameof(SGFSTUDID), nameof(SGFSTUDEDPCODE))]
 
-    public class StudentGradeFile
+    public class AddStudentGradeViewModel
     {
         public long SGFSTUDID { get; set; }
 
@@ -25,7 +25,5 @@ namespace StudentPortal.Web.Models.Entities
         [StringLength(10)]
         [RegularExpression(@"^(Enrollee|Returnee)$", ErrorMessage = "Remarks must be either 'Enrollee' or 'Returnee'")]
         public string SGFSTUDREMARKS { get; set; }
-
-
     }
 }
