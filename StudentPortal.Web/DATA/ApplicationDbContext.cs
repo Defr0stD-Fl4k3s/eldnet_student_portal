@@ -11,5 +11,7 @@ namespace StudentPortal.Web.DATA
         }
 
         public DbSet<StudentFile> StudentFiles { get; set; }
+
+
     }
 }
