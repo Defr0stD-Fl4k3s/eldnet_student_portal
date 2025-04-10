@@ -8,42 +8,33 @@ namespace StudentPortal.Web.Models.Entities
     {
         [Key]
         public long STFSTUDID { get; set; }
+
+        [Required]
         [StringLength(15)]
         public string STFSTUDLNAME { get; set; }
 
+        [Required]
         [StringLength(15)]
         public string STFSTUDFNAME { get; set; }
 
         [StringLength(15)]
         public string STFSTUDMNAME { get; set; }
 
+        [Required(ErrorMessage = "Course is required.")]
         [StringLength(10)]
         public string STFSTUDCOURSE { get; set; }
 
+        [Required]
         public int STFSTUDYEAR { get; set; }
 
+        [Required]
+        [StringLength(2)]
+        [RegularExpression("^(A|IN)$", ErrorMessage = "Status must be 'A' or 'IN'.")]
+        public string STFSTUDSTATUS { get; set; }
+
+        [Required]
         [StringLength(15)]
-        public STFSTUDREMARKSEnum STFSTUDREMARKS { get; set; } // (Shiftee, Transferee, etc.)
-
-        public STFSTUDSTATUSEnum STFSTUDSTATUS { get; set; }
+        [RegularExpression("^(Shiftee|Transferee|New|Old|Cross-Enrollee|Returnee)$",ErrorMessage = "Remarks must be one of the predefined values.")]
+        public string STFSTUDREMARKS { get; set; }
     }
-
-    public enum STFSTUDSTATUSEnum
-    {
-        A,  // Active
-        IN  // Inactive
-    }
-
-    public enum STFSTUDREMARKSEnum
-    {
-        Shiftee,
-        Transferee,
-        New,
-        Old,
-        CrossEnrollee,
-        Returnee
-
-    }
-
-
 }

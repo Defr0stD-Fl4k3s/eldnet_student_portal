@@ -1,46 +1,41 @@
-﻿using StudentPortal.Web.Models.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using StudentPortal.Web.Models.Entities;
 using System.ComponentModel.DataAnnotations;
 
 namespace StudentPortal.Web.Models
 {
+    [PrimaryKey(nameof(STFSTUDID))]
+
     public class AddStudentViewModel
     {
         [Key]
         public long STFSTUDID { get; set; }
+
+        [Required(ErrorMessage = "Last Name is required.")]
         [StringLength(15)]
         public string STFSTUDLNAME { get; set; }
 
+        [Required(ErrorMessage = "First Name is required.")]
         [StringLength(15)]
         public string STFSTUDFNAME { get; set; }
 
         [StringLength(15)]
         public string STFSTUDMNAME { get; set; }
 
+        [Required(ErrorMessage = "Course is required.")]
         [StringLength(10)]
         public string STFSTUDCOURSE { get; set; }
 
+        [Required(ErrorMessage = "Year is required.")]
+        [Range(1, 10, ErrorMessage = "Year must be between 1 and 10.")]
         public int STFSTUDYEAR { get; set; }
 
-        [StringLength(15)]
-        public STFSTUDREMARKSEnum STFSTUDREMARKS { get; set; } // (Shiftee, Transferee, etc.)
+        [Required(ErrorMessage = "Status is required.")]
+        [RegularExpression("^(A|IN)$", ErrorMessage = "Status must be 'A' or 'IN'.")]
+        public string STFSTUDSTATUS { get; set; }
 
-        public STFSTUDSTATUSEnum STFSTUDSTATUS { get; set; }
-    }
-    
-    public enum STFSTUDSTATUSEnum
-    {
-        A,  // Active
-        IN  // Inactive
-    }
-    public enum STFSTUDREMARKSEnum
-    {
-        Shiftee,
-        Transferee,
-        New,
-        Old,
-        CrossEnrollee,
-        Returnee
-
+        [Required(ErrorMessage = "Remarks are required.")]
+        [RegularExpression("^(Shiftee|Transferee|New|Old|Cross-Enrollee|Returnee)$",ErrorMessage = "Remarks must be one of the predefined values.")]
+        public string STFSTUDREMARKS { get; set; }
     }
 }
-
