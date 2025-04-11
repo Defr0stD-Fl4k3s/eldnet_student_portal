@@ -3,7 +3,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace StudentPortal.Web.Models.Entities
 {
-    [PrimaryKey(nameof(STFSTUDID))]
     public class StudentFile
     {
         [Key]

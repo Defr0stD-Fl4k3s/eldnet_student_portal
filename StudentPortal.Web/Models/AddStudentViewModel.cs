@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace StudentPortal.Web.Models
 {
-    [PrimaryKey(nameof(STFSTUDID))]
 
     public class AddStudentViewModel
     {
