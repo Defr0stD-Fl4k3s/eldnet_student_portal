@@ -20,17 +20,21 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var student in Model)
+        @foreach (var studentfile in Model)
         {
             <tr>
-                <td>@student.STFSTUDID</td>
-                <td>@student.STFSTUDLNAME</td>
-                <td>@student.STFSTUDFNAME</td>
-                <td>@student.STFSTUDMNAME</td>
-                <td>@student.STFSTUDCOURSE</td>
-                <td>@student.STFSTUDYEAR</td>
-                <td>@student.STFSTUDREMARKS</td>
-                <td>@(student.STFSTUDSTATUS == "A" ? "Active" : "Inactive")</td>
+                <td>@studentfile.STFSTUDID</td>
+                <td>@studentfile.STFSTUDLNAME</td>
+                <td>@studentfile.STFSTUDFNAME</td>
+                <td>@studentfile.STFSTUDMNAME</td>
+                <td>@studentfile.STFSTUDCOURSE</td>
+                <td>@studentfile.STFSTUDYEAR</td>
+                <td>@studentfile.STFSTUDREMARKS</td>
+                <td>@(studentfile.STFSTUDSTATUS == "A" ? "Active" : "Inactive")</td>
+                <td>
+                    <a class="btn btn-primary" asp-controller="Students" asp-action="Edit" asp-route-id="@studentfile.STFSTUDID">Edit</a>
+                </td>
+                
             </tr>
         }
     </tbody>
