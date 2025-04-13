@@ -141,5 +141,19 @@ namespace StudentPortal.Web.Controllers
 
             return RedirectToAction("List", "Students");
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(StudentFile viewModel)  
+        {
+            var studentfile = await dbContext.StudentFiles.FindAsync(viewModel.STFSTUDID);
+
+            if (studentfile is not null)
+            {
+                dbContext.StudentFiles.Remove(studentfile);
+                await dbContext.SaveChangesAsync();
+            }
+            return RedirectToAction("List", "Students");
+
+        }
     }
 }
