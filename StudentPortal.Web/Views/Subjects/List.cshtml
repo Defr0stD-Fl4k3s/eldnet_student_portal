@@ -1,0 +1,42 @@
+﻿@model IEnumerable<StudentPortal.Web.Models.Entities.SubjectFile>
+
+@{
+    ViewData["Title"] = "Subjects List";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Subject Code</th>
+            <th>Course Code</th>
+            <th>Description</th>
+            <th>Units</th>
+            <th>Category</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var subject in Model)
+        {
+            <tr>
+                <td>@subject.SFSUBJCODE</td>
+                <td>@subject.SFSUBJCOURSECODE</td>
+                <td>@subject.SFSUBJDESC</td>
+                <td>@subject.SFSUBJUNITS</td>
+                <td>@subject.SFSUBJCATEGORY</td>
+                <td>@subject.SFSUBJSTATUS</td>
+                <td>
+                    
+
+                    <a class="btn btn-primary" asp-controller="Subjects" asp-action="Edit" asp-route-id="@subject.SFSUBJCODE" asp-route-course="@subject.SFSUBJCOURSECODE">Edit</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

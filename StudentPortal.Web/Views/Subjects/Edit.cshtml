@@ -1,0 +1,53 @@
+﻿@model AddSubjectsViewModel
+
+@{
+    ViewData["Title"] = "Edit Subject";
+}
+
+<h2>Edit Subject</h2>
+
+<form asp-action="Edit" method="post">
+    <div class="form-group">
+        <label for="SFSUBJCODE">Subject Code</label>
+        <input type="text" class="form-control" id="SFSUBJCODE" name="SFSUBJCODE" value="@Model.SFSUBJCODE" readonly />
+    </div>
+    <div class="form-group">
+        <label for="SFSUBJCOURSECODE">Course Code</label>
+        <input type="text" class="form-control" id="SFSUBJCOURSECODE" name="SFSUBJCOURSECODE" value="@Model.SFSUBJCOURSECODE" readonly />
+    </div>
+    <div class="form-group">
+        <label for="SFSUBJDESC">Description</label>
+        <input type="text" class="form-control" id="SFSUBJDESC" name="SFSUBJDESC" value="@Model.SFSUBJDESC" />
+    </div>
+    <div class="form-group">
+        <label for="SFSUBJUNITS">Units</label>
+        <input type="number" class="form-control" id="SFSUBJUNITS" name="SFSUBJUNITS" value="@Model.SFSUBJUNITS" />
+    </div>
+    <div class="form-group">
+        <label for="SFSUBJREGOFRNG">Registration From</label>
+        <input type="text" class="form-control" id="SFSUBJREGOFRNG" name="SFSUBJREGOFRNG" value="@Model.SFSUBJREGOFRNG" />
+    </div>
+    <div class="form-group">
+        <label for="SFSUBJCATEGORY">Category</label>
+        <input type="text" class="form-control" id="SFSUBJCATEGORY" name="SFSUBJCATEGORY" value="@Model.SFSUBJCATEGORY" />
+    </div>
+    <div class="form-group">
+        <label for="SFSUBJSTATUS">Status</label>
+        <input type="text" class="form-control" id="SFSUBJSTATUS" name="SFSUBJSTATUS" value="@Model.SFSUBJSTATUS" />
+    </div>
+    <div class="form-group">
+        <label for="SFSUBJCURRCODE">Current Code</label>
+        <input type="text" class="form-control" id="SFSUBJCURRCODE" name="SFSUBJCURRCODE" value="@Model.SFSUBJCURRCODE" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>
+
+<br />
+
+<!-- Delete Button -->
+<form asp-action="Delete" method="post" onsubmit="return confirm('Are you sure you want to delete this subject?');">
+    <input type="hidden" name="SFSUBJCODE" value="@Model.SFSUBJCODE" />
+    <input type="hidden" name="SFSUBJCOURSECODE" value="@Model.SFSUBJCOURSECODE" />
+    <button type="submit" class="btn btn-danger">Delete Subject</button>
+</form>
