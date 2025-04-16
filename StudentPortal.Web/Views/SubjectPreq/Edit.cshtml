@@ -1,0 +1,45 @@
+﻿@model StudentPortal.Web.Models.AddSubjectPreqViewModel
+
+@{
+    ViewData["Title"] = "Edit Subject Pre-requisite";
+}
+
+<h2 class="mb-4">Edit Subject Pre-requisite</h2>
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        Please fix the errors and try again.
+    </div>
+}
+
+<form asp-action="Edit" method="post">
+    <div class="mb-3">
+        <label asp-for="SUBJCODE" class="form-label">Subject Code</label>
+        <input asp-for="SUBJCODE" class="form-control" readonly />
+        <span asp-validation-for="SUBJCODE" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="SUBJPRECODE" class="form-label">Pre-requisite Code</label>
+        <input asp-for="SUBJPRECODE" class="form-control" readonly />
+        <span asp-validation-for="SUBJPRECODE" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="SUBJCATEGORY" class="form-label">Category</label>
+        <select asp-for="SUBJCATEGORY" class="form-select">
+            <option value="">-- Select Category --</option>
+            <option value="CR">CR (Co-requisite)</option>
+            <option value="PR">PR (Pre-requisite)</option>
+        </select>
+        <span asp-validation-for="SUBJCATEGORY" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a asp-action="List" class="btn btn-secondary">Back to List</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<StudentPortal.Web.Models.Entities.SubjectPreqFile>
+
+@{
+    ViewData["Title"] = "Subject Pre-requisites List";
+}
+
+<h2 class="mb-4">Subject Pre-requisites</h2>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Subject Code</th>
+            <th>Pre-requisite Code</th>
+            <th>Category</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Any())
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.SUBJCODE</td>
+                    <td>@item.SUBJPRECODE</td>
+                    <td>@item.SUBJCATEGORY</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-subjcode="@item.SUBJCODE" asp-route-subjprecode="@item.SUBJPRECODE" class="btn btn-sm btn-primary">Edit</a>
+
+                        <form asp-action="Delete" method="post" asp-route-subjcode="@item.SUBJCODE" asp-route-subjprecode="@item.SUBJPRECODE" style="display:inline;" onsubmit="return confirm('Are you sure you want to delete this item?');">
+                            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="4" class="text-center">No data available.</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="AddSubjectPreq" class="btn btn-success mt-3">Add New Pre-requisite</a>
