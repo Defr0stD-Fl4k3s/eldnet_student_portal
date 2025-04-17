@@ -17,5 +17,7 @@ namespace StudentPortal.Web.DATA
 
         public DbSet<SubjectSchedFile> SubjectSchedFiles { get; set; }
 
+        public DbSet<EnrollmentHeaderFile> EnrollmentHeaderFiles { get; set; }
+
     }
 }

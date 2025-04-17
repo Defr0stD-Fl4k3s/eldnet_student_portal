@@ -1,0 +1,46 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model StudentPortal.Web.Models.Entities.EnrollmentHeaderFile
+
+@{
+    ViewData["Title"] = "Edit Enrollment Header";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Edit" method="post">
+    <div>
+        <label for="ENRHFSTUDID">Student ID</label>
+        <input type="text" id="ENRHFSTUDID" name="ENRHFSTUDID" value="@Model.ENRHFSTUDID" readonly />
+    </div>
+
+    <div>
+        <label for="ENRHFSTUDDATEENROLL">Enrollment Date</label>
+        <input type="date" id="ENRHFSTUDDATEENROLL" name="ENRHFSTUDDATEENROLL" value="@Model.ENRHFSTUDDATEENROLL.ToString("yyyy-MM-dd")" />
+    </div>
+
+    <div>
+        <label for="ENRHFSTUDSCHLYR">School Year</label>
+        <input type="text" id="ENRHFSTUDSCHLYR" name="ENRHFSTUDSCHLYR" value="@Model.ENRHFSTUDSCHLYR" />
+    </div>
+
+    <div>
+        <label for="ENRHFSTUDENCODER">Encoder</label>
+        <input type="text" id="ENRHFSTUDENCODER" name="ENRHFSTUDENCODER" value="@Model.ENRHFSTUDENCODER" />
+    </div>
+
+    <div>
+        <label for="ENRHFSTUDTOTALUNITS">Total Units</label>
+        <input type="number" id="ENRHFSTUDTOTALUNITS" name="ENRHFSTUDTOTALUNITS" value="@Model.ENRHFSTUDTOTALUNITS" />
+    </div>
+
+    <div>
+        <label for="ENRHFSTUDSTATUS">Status</label>
+        <input type="text" id="ENRHFSTUDSTATUS" name="ENRHFSTUDSTATUS" value="@Model.ENRHFSTUDSTATUS" />
+    </div>
+
+    <button type="submit">Save Changes</button>
+</form>
