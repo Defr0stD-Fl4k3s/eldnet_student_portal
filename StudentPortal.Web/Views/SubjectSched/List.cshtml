@@ -1,0 +1,61 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<StudentPortal.Web.Models.Entities.SubjectSchedFile>
+
+@{
+    ViewData["Title"] = "Subject Schedules List";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>EDP Code</th>
+            <th>Subject Code</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Days</th>
+            <th>Room</th>
+            <th>Max Size</th>
+            <th>Class Size</th>
+            <th>Status</th>
+            <th>Time Period</th>
+            <th>Section</th>
+            <th>School Year</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var sched in Model)
+        {
+            <tr>
+                <td>@sched.SSFEDPCODE</td>
+                <td>@sched.SSFSUBJCODE</td>
+                <td>@sched.SSFSTARTTIME.ToString("hh:mm tt")</td>
+                <td>@sched.SSFENDTIME.ToString("hh:mm tt")</td>
+                <td>@sched.SSFDAYS</td>
+                <td>@sched.SSFROOM</td>
+                <td>@sched.SSFMAXSIZE</td>
+                <td>@sched.SSFCLASSSIZE</td>
+                <td>@sched.SSFSTATUS</td>
+                <td>@sched.SSFXM</td>
+                <td>@sched.SSFSECTION</td>
+                <td>@sched.SSFSCHOOLYEAR</td>
+                <td>
+                    <a class="btn btn-primary"
+                       asp-controller="SubjectSched"
+                       asp-action="Edit"
+                       asp-route-id="@sched.SSFEDPCODE">
+                        Edit
+                    </a>
+
+                    
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -15,5 +15,7 @@ namespace StudentPortal.Web.DATA
 
         public DbSet<SubjectPreqFile> SubjectPreqFiles { get; set; }
 
+        public DbSet<SubjectSchedFile> SubjectSchedFiles { get; set; }
+
     }
 }

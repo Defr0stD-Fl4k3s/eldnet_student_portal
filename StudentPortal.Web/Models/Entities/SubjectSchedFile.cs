@@ -29,7 +29,7 @@ namespace StudentPortal.Web.Models.Entities
         [RegularExpression("ACT|INA|DIS|RES|CLO", ErrorMessage = "Invalid status code")]
         public string SSFSTATUS { get; set; }
 
-        [StringLength(2)]
+        [StringLength(3)]
         [RegularExpression("AM|PM", ErrorMessage = "Invalid time period")]
         public string SSFXM { get; set; }
 
