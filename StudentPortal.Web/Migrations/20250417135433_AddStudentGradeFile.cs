@@ -5,7 +5,7 @@
 namespace StudentPortal.Web.Migrations
 {
     /// <inheritdoc />
-    public partial class AddEnrollmentDetailFile : Migration
+    public partial class AddStudentGradeFile : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -25,18 +25,18 @@ namespace StudentPortal.Web.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "studentGradeFiles",
+                name: "StudentGradeFiles",
                 columns: table => new
                 {
                     SGFSTUDID = table.Column<long>(type: "bigint", nullable: false),
-                    SGFSTUDEDPCODE = table.Column<string>(type: "nvarchar(8)", maxLength: 8, nullable: false),
                     SGFSTUDSUBJCODE = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    SGFSTUDEDPCODE = table.Column<string>(type: "nvarchar(8)", maxLength: 8, nullable: false),
                     SGFSTUDSUBJGRADE = table.Column<double>(type: "float", nullable: false),
                     SGFSTUDREMARKS = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_studentGradeFiles", x => new { x.SGFSTUDID, x.SGFSTUDEDPCODE });
+                    table.PrimaryKey("PK_StudentGradeFiles", x => new { x.SGFSTUDID, x.SGFSTUDEDPCODE, x.SGFSTUDSUBJCODE });
                 });
         }
 
@@ -47,7 +47,7 @@ namespace StudentPortal.Web.Migrations
                 name: "EnrollmentDetailFile");
 
             migrationBuilder.DropTable(
-                name: "studentGradeFiles");
+                name: "StudentGradeFiles");
         }
     }
 }

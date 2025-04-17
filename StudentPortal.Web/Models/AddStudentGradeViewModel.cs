@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace StudentPortal.Web.Models
 {
-    [PrimaryKey(nameof(SGFSTUDID), nameof(SGFSTUDEDPCODE))]
+    [PrimaryKey(nameof(SGFSTUDID), nameof(SGFSTUDEDPCODE), nameof(SGFSTUDSUBJCODE))]
 
     public class AddStudentGradeViewModel
     {
@@ -23,7 +23,6 @@ namespace StudentPortal.Web.Models
 
         [Required]
         [StringLength(10)]
-        [RegularExpression(@"^(Enrollee|Returnee)$", ErrorMessage = "Remarks must be either 'Enrollee' or 'Returnee'")]
-        public string SGFSTUDREMARKS { get; set; }
+        public string SGFSTUDREMARKS { get; set; } // Remove regex if no restriction
     }
 }

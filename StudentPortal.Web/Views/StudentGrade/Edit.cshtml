@@ -1,0 +1,37 @@
+﻿@model StudentPortal.Web.Models.AddStudentGradeViewModel
+
+@{
+    ViewData["Title"] = "Edit Student Grade";
+}
+
+<h2>Edit Student Grade</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label for="SGFSTUDID">Student ID</label>
+        <input asp-for="SGFSTUDID" class="form-control" readonly />
+    </div>
+    <div class="form-group">
+        <label for="SGFSTUDSUBJCODE">Subject Code</label>
+        <input asp-for="SGFSTUDSUBJCODE" class="form-control" readonly />
+    </div>
+    <div class="form-group">
+        <label for="SGFSTUDEDPCODE">Department Code</label>
+        <input asp-for="SGFSTUDEDPCODE" class="form-control" readonly />
+    </div>
+    <div class="form-group">
+        <label for="SGFSTUDSUBJGRADE">Grade</label>
+        <input asp-for="SGFSTUDSUBJGRADE" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="SGFSTUDREMARKS">Remarks</label>
+        <input asp-for="SGFSTUDREMARKS" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>
+
+<hr />
+
+<form method="post" asp-action="Delete" asp-route-id="@Model.SGFSTUDID" asp-route-deptCode="@Model.SGFSTUDEDPCODE" asp-route-subjCode="@Model.SGFSTUDSUBJCODE">
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>

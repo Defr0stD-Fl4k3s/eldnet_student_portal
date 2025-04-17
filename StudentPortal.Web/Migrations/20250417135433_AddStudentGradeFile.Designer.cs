@@ -12,8 +12,8 @@ using StudentPortal.Web.DATA;
 namespace StudentPortal.Web.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250417085008_AddEnrollmentDetailFile")]
-    partial class AddEnrollmentDetailFile
+    [Migration("20250417135433_AddStudentGradeFile")]
+    partial class AddStudentGradeFile
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -138,22 +138,21 @@ namespace StudentPortal.Web.Migrations
                         .HasMaxLength(8)
                         .HasColumnType("nvarchar(8)");
 
+                    b.Property<string>("SGFSTUDSUBJCODE")
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)");
+
                     b.Property<string>("SGFSTUDREMARKS")
                         .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
-                    b.Property<string>("SGFSTUDSUBJCODE")
-                        .IsRequired()
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
-
                     b.Property<double>("SGFSTUDSUBJGRADE")
                         .HasColumnType("float");
 
-                    b.HasKey("SGFSTUDID", "SGFSTUDEDPCODE");
+                    b.HasKey("SGFSTUDID", "SGFSTUDEDPCODE", "SGFSTUDSUBJCODE");
 
-                    b.ToTable("studentGradeFiles");
+                    b.ToTable("StudentGradeFiles");
                 });
 
             modelBuilder.Entity("StudentPortal.Web.Models.Entities.SubjectFile", b =>

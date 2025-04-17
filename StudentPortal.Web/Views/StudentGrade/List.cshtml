@@ -1,0 +1,36 @@
+﻿@model IEnumerable<StudentPortal.Web.Models.Entities.StudentGradeFile>
+
+@{
+    ViewData["Title"] = "Student Grades List";
+}
+
+<h2>Student Grades List</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Student ID</th>
+            <th>Subject Code</th>
+            <th>Department Code</th>
+            <th>Grade</th>
+            <th>Remarks</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var grade in Model)
+        {
+            <tr>
+                <td>@grade.SGFSTUDID</td>
+                <td>@grade.SGFSTUDSUBJCODE</td>
+                <td>@grade.SGFSTUDEDPCODE</td>
+                <td>@grade.SGFSTUDSUBJGRADE</td>
+                <td>@grade.SGFSTUDREMARKS</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@grade.SGFSTUDID" asp-route-deptCode="@grade.SGFSTUDEDPCODE" asp-route-subjCode="@grade.SGFSTUDSUBJCODE" class="btn btn-primary btn-sm">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@grade.SGFSTUDID" asp-route-deptCode="@grade.SGFSTUDEDPCODE" asp-route-subjCode="@grade.SGFSTUDSUBJCODE" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

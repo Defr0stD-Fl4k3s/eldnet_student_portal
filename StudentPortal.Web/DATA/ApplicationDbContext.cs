@@ -21,6 +21,6 @@ namespace StudentPortal.Web.DATA
 
         public DbSet<EnrollmentDetailFile> EnrollmentDetailFile { get; set; }
 
-        public DbSet<StudentGradeFile> studentGradeFiles { get; set; }
+        public DbSet<StudentGradeFile> StudentGradeFiles { get; set; }
     }
 }
