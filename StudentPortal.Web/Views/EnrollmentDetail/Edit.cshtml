@@ -1,0 +1,35 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model StudentPortal.Web.Models.AddEnrollmentDetailViewModel
+
+<h2>Edit Enrollment Detail</h2>
+
+<form asp-action="Edit" method="post">
+    <div class="form-group">
+        <label for="ENRDFSTUDID">Student ID</label>
+        <input type="number" class="form-control" id="ENRDFSTUDID" name="ENRDFSTUDID" value="@Model.ENRDFSTUDID" readonly />
+    </div>
+    <div class="form-group">
+        <label for="ENRDFSTUDEDPCODE">EDP Code</label>
+        <input type="text" class="form-control" id="ENRDFSTUDEDPCODE" name="ENRDFSTUDEDPCODE" value="@Model.ENRDFSTUDEDPCODE" readonly />
+    </div>
+    <div class="form-group">
+        <label for="ENRDFSTUDSUBJCDE">Subject Code</label>
+        <input type="text" class="form-control" id="ENRDFSTUDSUBJCDE" name="ENRDFSTUDSUBJCDE" value="@Model.ENRDFSTUDSUBJCDE" />
+    </div>
+    <div class="form-group">
+        <label for="ENRDFSTUDSTATUS">Status</label>
+        <input type="text" class="form-control" id="ENRDFSTUDSTATUS" name="ENRDFSTUDSTATUS" value="@Model.ENRDFSTUDSTATUS" />
+    </div>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+
+    <!-- Delete button -->
+    <a asp-action="Delete"
+       asp-route-studentId="@Model.ENRDFSTUDID"
+       asp-route-edpCode="@Model.ENRDFSTUDEDPCODE"
+       class="btn btn-danger ml-2"
+       onclick="return confirm('Are you sure you want to delete this record?');">
+        Delete
+    </a>
+</form>

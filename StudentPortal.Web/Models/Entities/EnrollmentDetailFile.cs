@@ -10,6 +10,7 @@ namespace StudentPortal.Web.Models.Entities
     {
         public long ENRDFSTUDID { get; set; } // Student ID
 
+        [StringLength(8)]
         public string ENRDFSTUDEDPCODE { get; set; } // Department Code
 
         [StringLength(15)]

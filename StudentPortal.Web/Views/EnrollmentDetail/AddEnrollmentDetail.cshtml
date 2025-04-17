@@ -5,39 +5,25 @@
 }
 @model StudentPortal.Web.Models.AddEnrollmentDetailViewModel
 
-<h1>Add Enrollment Detail</h1>
+<h2>Add Enrollment Detail</h2>
 
-<form method="post">
-    <div class="mt-3">
-        <label class="form-label">Student ID</label>
-        <input type="number" class="form-control" asp-for="ENRDFSTUDID" step="1" />
-        <span asp-validation-for="ENRDFSTUDID" class="text-danger"></span>
+<form asp-action="AddEnrollmentDetail" method="post">
+    <div class="form-group">
+        <label for="ENRDFSTUDID">Student ID</label>
+        <input type="number" class="form-control" id="ENRDFSTUDID" name="ENRDFSTUDID" />
     </div>
-
-    <div class="mt-3">
-        <label class="form-label">EDP Code</label>
-        <input type="text" class="form-control" asp-for="ENRDFSTUDEDPCODE" maxlength="8" />
-        <span asp-validation-for="ENRDFSTUDEDPCODE" class="text-danger"></span>
+    <div class="form-group">
+        <label for="ENRDFSTUDEDPCODE">EDP Code</label>
+        <input type="text" class="form-control" id="ENRDFSTUDEDPCODE" name="ENRDFSTUDEDPCODE" />
     </div>
-
-    <div class="mt-3">
-        <label class="form-label">Subject Code</label>
-        <input type="text" class="form-control" asp-for="ENRDFSTUDSUBJCDE" maxlength="15" />
-        <span asp-validation-for="ENRDFSTUDSUBJCDE" class="text-danger"></span>
+    <div class="form-group">
+        <label for="ENRDFSTUDSUBJCDE">Subject Code</label>
+        <input type="text" class="form-control" id="ENRDFSTUDSUBJCDE" name="ENRDFSTUDSUBJCDE" />
     </div>
-
-    <div class="mt-3">
-        <label class="form-label">Status</label>
-        <select class="form-control" asp-for="ENRDFSTUDSTATUS">
-            <option value="">Select Status</option>
-            <option value="WD">Withdrawn (WD)</option>
-            <option value="CA">Cancelled (CA)</option>
-        </select>
-        <span asp-validation-for="ENRDFSTUDSTATUS" class="text-danger"></span>
+    <div class="form-group">
+        <label for="ENRDFSTUDSTATUS">Status</label>
+        <input type="text" class="form-control" id="ENRDFSTUDSTATUS" name="ENRDFSTUDSTATUS" />
     </div>
-
-    <div class="mt-3">
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <button type="button" class="btn btn-secondary" onclick="window.history.back()">Back</button>
-    </div>
+    <button type="submit" class="btn btn-primary">Add Enrollment Detail</button>
 </form>
+
